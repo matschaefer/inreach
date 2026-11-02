@@ -1,0 +1,387 @@
+@import "tailwindcss";
+@theme {
+  --color-primary: #245b46;
+  --color-primary-foreground: #ffffff;
+}
+* {
+  box-sizing: border-box;
+}
+:root {
+  color-scheme: light;
+  font-family:
+    Inter,
+    ui-sans-serif,
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    sans-serif;
+}
+html {
+  min-height: 100%;
+  background: #f7f8f4;
+}
+body {
+  margin: 0;
+  color: #192d24;
+  background: #f7f8f4;
+}
+a {
+  color: inherit;
+  text-decoration: none;
+}
+button,
+input {
+  font: inherit;
+}
+.site-shell {
+  max-width: 1020px;
+  margin: 0 auto;
+  padding: 0 28px 64px;
+}
+.topbar {
+  height: 90px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #d8dfd6;
+}
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 11px;
+  font-size: 20px;
+  letter-spacing: -0.04em;
+  font-weight: 750;
+}
+.brand-mark {
+  display: grid;
+  place-items: center;
+  background: #245b46;
+  color: #fff;
+  width: 33px;
+  height: 33px;
+  border-radius: 10px;
+  font-size: 19px;
+}
+.brand-accent {
+  color: #245b46;
+}
+.environment-label {
+  color: #64756a;
+  font-size: 12px;
+}
+.hero {
+  padding: 72px 0 33px;
+}
+.eyebrow {
+  color: #245b46;
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+h1 {
+  margin: 16px 0;
+  font-size: clamp(38px, 6vw, 62px);
+  letter-spacing: -0.055em;
+  line-height: 1.08;
+}
+h1 span {
+  color: #245b46;
+}
+.hero > p {
+  max-width: 690px;
+  color: #586b60;
+  font-size: 16px;
+  line-height: 1.7;
+  margin: 0 0 31px;
+}
+.searchbar {
+  display: flex;
+  align-items: center;
+  padding: 7px;
+  border-radius: 15px;
+  background: #ffffff;
+  border: 1px solid #cbd5cc;
+  gap: 10px;
+  max-width: 810px;
+}
+.searchbar:focus-within {
+  border-color: #729aff;
+  box-shadow: 0 0 0 2px #466dec44;
+}
+.search-icon {
+  font-size: 29px;
+  padding-left: 13px;
+  color: #8a9cb8;
+  line-height: 1;
+}
+.searchbar input {
+  flex: 1;
+  min-width: 0;
+  border: 0;
+  outline: none;
+  background: transparent;
+  color: white;
+  padding: 12px 3px;
+}
+.searchbar input::placeholder {
+  color: #7185a6;
+}
+.searchbar button {
+  border: 0;
+  background: #245b46;
+  color: white;
+  font-weight: 750;
+  cursor: pointer;
+  padding: 13px 25px;
+  border-radius: 10px;
+}
+.searchbar button:hover {
+  background: #1b4836;
+}
+.stats {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1.6fr;
+  gap: 12px;
+  padding: 10px 0 48px;
+}
+.stat {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  border: 1px solid #d8dfd6;
+  background: #ffffff;
+  border-radius: 14px;
+  padding: 21px 23px;
+}
+.stat strong {
+  font-size: 28px;
+  letter-spacing: -0.04em;
+  font-variant-numeric: tabular-nums;
+}
+.stat span {
+  color: #586b60;
+  font-size: 12px;
+}
+.stat-date strong {
+  font-size: 19px;
+  padding-top: 6px;
+  padding-bottom: 4px;
+}
+.list-heading {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  gap: 12px;
+  margin-bottom: 20px;
+}
+h2 {
+  font-size: 27px;
+  letter-spacing: -0.035em;
+  margin: 8px 0 0;
+}
+.result-count {
+  color: #586b60;
+  font-size: 13px;
+  padding-bottom: 5px;
+}
+.jobs-list {
+  display: grid;
+  gap: 11px;
+}
+.job-card {
+  padding: 22px 26px;
+  border: 1px solid #d8dfd6;
+  border-radius: 14px;
+  background: #ffffff;
+  transition:
+    border-color 0.15s ease,
+    background 0.15s ease;
+}
+.job-card:hover {
+  border-color: #536f9d;
+  background: #eef3ec;
+}
+.job-topline,
+.job-footer {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+.source-tag {
+  display: inline-flex;
+  align-items: center;
+  text-transform: capitalize;
+  border: 1px solid #34507a;
+  background: #213957;
+  color: #aaceff;
+  font-size: 12px;
+  border-radius: 6px;
+  padding: 4px 8px;
+  font-weight: 750;
+}
+.source-label {
+  color: #8194b2;
+  font-size: 12px;
+}
+h3 {
+  margin: 15px 0 21px;
+  font-size: 19px;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  line-height: 1.4;
+}
+h3 a:hover {
+  color: #92baff;
+}
+.job-footer {
+  justify-content: space-between;
+  color: #8a9fbc;
+  font-size: 12px;
+}
+.job-link {
+  color: #8bb4ff;
+  font-weight: 750;
+}
+.job-link:hover {
+  color: #c0d6ff;
+}
+.empty-state {
+  padding: 40px 26px;
+  border: 1px dashed #3a4c6c;
+  border-radius: 14px;
+  background: #111a2b;
+}
+.empty-state h3 {
+  margin: 0 0 8px;
+}
+.empty-state p {
+  color: #9bb0ce;
+}
+.error-state {
+  border-color: #ac6e5d;
+}
+.reset-link {
+  color: #84b1ff;
+  font-size: 14px;
+}
+code {
+  color: #b8d2ff;
+}
+.pagination {
+  margin-top: 25px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 35px;
+  color: #acbbd3;
+  font-size: 13px;
+}
+.pagination a {
+  color: #94baff;
+  font-weight: 750;
+}
+.disabled-page {
+  color: #61718b;
+}
+.site-footer {
+  margin-top: 70px;
+  border-top: 1px solid #d8dfd6;
+  padding-top: 22px;
+  color: #7385a3;
+  font-size: 12px;
+  text-align: center;
+}
+@media (max-width: 650px) {
+  .site-shell {
+    padding-inline: 17px;
+  }
+  .topbar {
+    height: 76px;
+  }
+  .environment-label {
+    display: none;
+  }
+  .hero {
+    padding-top: 51px;
+  }
+  .stats {
+    grid-template-columns: 1fr 1fr;
+  }
+  .stat-date {
+    grid-column: 1 / -1;
+  }
+  .job-card {
+    padding: 19px;
+  }
+  .searchbar button {
+    padding-inline: 14px;
+  }
+  .searchbar input {
+    font-size: 13px;
+  }
+  .search-icon {
+    display: none;
+  }
+  .job-footer {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 10px;
+  }
+}
+
+.searchbar input {
+  color: #192d24;
+}
+a:focus-visible,
+button:focus-visible {
+  outline: 3px solid #245b46;
+  outline-offset: 4px;
+}
+.hero {
+  padding-top: 90px;
+}
+.brand-mark {
+  border-radius: 50%;
+}
+.job-card {
+  border-radius: 4px;
+}
+.stat {
+  border-radius: 4px;
+}
+
+.source-tag {
+  border-color: #cfddd1;
+  background: #edf3ea;
+  color: #245b46;
+}
+.source-label,
+.job-footer,
+.site-footer {
+  color: #586b60;
+}
+.job-link,
+.pagination a,
+.reset-link,
+h3 a:hover {
+  color: #245b46;
+}
+.job-link:hover {
+  color: #143c2b;
+}
+.empty-state {
+  background: #fff;
+  border-color: #bacabd;
+}
+.empty-state p,
+.pagination {
+  color: #586b60;
+}
+@media (max-width: 650px) {
+  .hero {
+    padding-top: 50px;
+  }
+}
